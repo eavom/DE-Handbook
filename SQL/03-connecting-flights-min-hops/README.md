@@ -1,5 +1,9 @@
 # Connecting Flights — Minimum Hops Path
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Advanced](https://img.shields.io/badge/Difficulty-Advanced-red?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Recursive CTE](https://img.shields.io/badge/-Recursive%20CTE-C0392B?style=flat-square) ![Graph Traversal](https://img.shields.io/badge/-Graph%20Traversal-C0392B?style=flat-square) ![Array Functions](https://img.shields.io/badge/-Array%20Functions-7F8C8D?style=flat-square)
+
 ## Problem Statement
 
 Given a table of one-way flights (`source -> destination`), find a route from

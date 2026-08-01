@@ -1,5 +1,9 @@
 # Running Sum, Next Value, Previous Value
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Window Functions](https://img.shields.io/badge/-Window%20Functions-8E44AD?style=flat-square) ![Running Total](https://img.shields.io/badge/-Running%20Total-8E44AD?style=flat-square) ![LAG/LEAD](https://img.shields.io/badge/-LAG%2FLEAD-8E44AD?style=flat-square)
+
 ## Problem Statement
 
 Given a simple table of IDs, return each row along with:

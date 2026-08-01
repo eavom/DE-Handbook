@@ -1,5 +1,9 @@
 # SCD Type 2 — Merge Adjacent Duplicate Rows
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Advanced](https://img.shields.io/badge/Difficulty-Advanced-red?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Gaps & Islands](https://img.shields.io/badge/-Gaps%20%26%20Islands-E67E22?style=flat-square) ![LAG](https://img.shields.io/badge/-LAG-8E44AD?style=flat-square) ![Running Total](https://img.shields.io/badge/-Running%20Total-8E44AD?style=flat-square) ![SCD Type 2](https://img.shields.io/badge/-SCD%20Type%202-8B0000?style=flat-square)
+
 ## Problem Statement
 
 A Type-2 slowly changing dimension table has one row per attribute-change period per

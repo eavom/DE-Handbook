@@ -1,5 +1,13 @@
 # Customer & Orders Analytics (Multi-Part)
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Multi-Part](https://img.shields.io/badge/Difficulty-Multi--Part-blueviolet?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square) ![JOIN](https://img.shields.io/badge/-JOIN-16A085?style=flat-square) ![Anti-Join](https://img.shields.io/badge/-Anti--Join-16A085?style=flat-square) ![RANK](https://img.shields.io/badge/-RANK-8E44AD?style=flat-square) ![Date Functions](https://img.shields.io/badge/-Date%20Functions-E91E63?style=flat-square) ![HAVING](https://img.shields.io/badge/-HAVING-27AE60?style=flat-square) ![String Aggregation](https://img.shields.io/badge/-String%20Aggregation-F39C12?style=flat-square) ![Pivoting](https://img.shields.io/badge/-Pivoting-27AE60?style=flat-square) ![Conditional Aggregation (CASE/FILTER)](https://img.shields.io/badge/-Conditional%20Aggregation%20%28CASE%2FFILTER%29-27AE60?style=flat-square)
+
+> This is a 13-part multi-schema question set. Each sub-question below has its own
+> difficulty + technique tags — see the [Difficulty Rubric](../MASTER.md#difficulty-rubric)
+> in the master index for how "Multi-Part" questions like this one are scored overall.
+
 ## Problem Statement
 
 A common interview format: one `customers` + `orders` schema, and a rapid-fire list of
@@ -80,6 +88,8 @@ Nine distinct questions, each testing a different SQL building block:
 
 **1. Total orders & amount spent per customer, ordered by amount desc**
 
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square) ![JOIN](https://img.shields.io/badge/-JOIN-16A085?style=flat-square)
+
 ```sql
 SELECT c.customer_name,
        COUNT(o.order_id)      AS total_orders,
@@ -92,6 +102,8 @@ ORDER BY total_amount DESC;
 
 **2. Customers who never placed an order**
 
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![JOIN](https://img.shields.io/badge/-JOIN-16A085?style=flat-square) ![Anti-Join](https://img.shields.io/badge/-Anti--Join-16A085?style=flat-square)
+
 ```sql
 SELECT c.customer_id, c.customer_name
 FROM customers c
@@ -103,6 +115,8 @@ missing" pattern — it keeps every customer row and only orders that matched, s
 customer with no matching order shows a `NULL` order_id.
 
 **3. Orders & revenue in the last 3 months relative to the latest order date**
+
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![Date Functions](https://img.shields.io/badge/-Date%20Functions-E91E63?style=flat-square)
 
 ```sql
 WITH bounds AS (
@@ -117,6 +131,8 @@ mistake, since interview datasets are rarely refreshed to "today".
 
 **4. Rank each customer's orders by amount (descending)**
 
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![RANK](https://img.shields.io/badge/-RANK-8E44AD?style=flat-square)
+
 ```sql
 SELECT c.customer_name, o.order_id, o.order_date, o.amount,
        RANK() OVER (PARTITION BY o.customer_id ORDER BY o.amount DESC) AS amount_rank
@@ -128,6 +144,8 @@ ORDER BY c.customer_name, amount_rank;
 
 **5. Order count by status**
 
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square)
+
 ```sql
 SELECT status, COUNT(*) AS order_count
 FROM orders
@@ -136,6 +154,8 @@ ORDER BY order_count DESC;
 ```
 
 **6. Most popular payment mode**
+
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square)
 
 ```sql
 SELECT payment_mode, COUNT(*) AS uses
@@ -146,6 +166,8 @@ LIMIT 1;
 ```
 
 **7. Orders per customer before/after signup anniversary in the order's own year**
+
+![Difficulty: Advanced](https://img.shields.io/badge/Difficulty-Advanced-red?style=flat-square) ![Date Functions](https://img.shields.io/badge/-Date%20Functions-E91E63?style=flat-square) ![Conditional Aggregation (CASE/FILTER)](https://img.shields.io/badge/-Conditional%20Aggregation%20%28CASE%2FFILTER%29-27AE60?style=flat-square)
 
 ```sql
 SELECT
@@ -166,6 +188,8 @@ both sides.
 
 **8. Per-city rollup**
 
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square) ![JOIN](https://img.shields.io/badge/-JOIN-16A085?style=flat-square)
+
 ```sql
 SELECT
     c.city,
@@ -181,6 +205,8 @@ GROUP BY c.city;
 
 **9. Customers with orders but zero cancellations**
 
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![HAVING](https://img.shields.io/badge/-HAVING-27AE60?style=flat-square) ![Conditional Aggregation (CASE/FILTER)](https://img.shields.io/badge/-Conditional%20Aggregation%20%28CASE%2FFILTER%29-27AE60?style=flat-square)
+
 ```sql
 SELECT c.customer_id, c.customer_name
 FROM customers c
@@ -190,6 +216,8 @@ HAVING SUM(CASE WHEN o.status = 'Cancelled' THEN 1 ELSE 0 END) = 0;
 ```
 
 **10. More than 2 orders and avg order amount > 1000**
+
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![HAVING](https://img.shields.io/badge/-HAVING-27AE60?style=flat-square)
 
 ```sql
 SELECT c.customer_id, c.customer_name,
@@ -202,6 +230,8 @@ HAVING COUNT(*) > 2 AND AVG(o.amount) > 1000;
 
 **11. Top 3 customers by total spend**
 
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square)
+
 ```sql
 SELECT c.customer_name, SUM(o.amount) AS total_spent
 FROM customers c
@@ -212,6 +242,8 @@ LIMIT 3;
 ```
 
 **12. Distinct payment modes used per customer as a CSV string**
+
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![String Aggregation](https://img.shields.io/badge/-String%20Aggregation-F39C12?style=flat-square)
 
 ```sql
 SELECT c.customer_id, c.customer_name,
@@ -224,6 +256,8 @@ GROUP BY c.customer_id, c.customer_name;
 `GROUP_CONCAT` on MySQL.)
 
 **13. Pivot: order count per customer by status**
+
+![Difficulty: Advanced](https://img.shields.io/badge/Difficulty-Advanced-red?style=flat-square) ![Pivoting](https://img.shields.io/badge/-Pivoting-27AE60?style=flat-square) ![Conditional Aggregation (CASE/FILTER)](https://img.shields.io/badge/-Conditional%20Aggregation%20%28CASE%2FFILTER%29-27AE60?style=flat-square)
 
 ```sql
 SELECT

@@ -1,5 +1,9 @@
 # Banking Customer Category
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Basic](https://img.shields.io/badge/Difficulty-Basic-brightgreen?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Conditional Aggregation (CASE/FILTER)](https://img.shields.io/badge/-Conditional%20Aggregation%20%28CASE%2FFILTER%29-27AE60?style=flat-square) ![GROUP BY](https://img.shields.io/badge/-GROUP%20BY-27AE60?style=flat-square)
+
 ## Problem Statement
 
 Given a bank's transaction log for a set of customers, classify every customer into a

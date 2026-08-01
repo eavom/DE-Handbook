@@ -1,5 +1,9 @@
 # Consecutive Free Desks — Best Fit
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Advanced](https://img.shields.io/badge/Difficulty-Advanced-red?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Gaps & Islands](https://img.shields.io/badge/-Gaps%20%26%20Islands-E67E22?style=flat-square) ![ROW_NUMBER](https://img.shields.io/badge/-ROW__NUMBER-8E44AD?style=flat-square) ![Array Aggregation](https://img.shields.io/badge/-Array%20Aggregation-7F8C8D?style=flat-square)
+
 ## Problem Statement
 
 A desk allocation table marks each desk with an `is_free` flag (`X` = free, blank =

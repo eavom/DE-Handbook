@@ -1,5 +1,9 @@
 # Employee Hierarchy — Recursive Reporting Chain
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Advanced](https://img.shields.io/badge/Difficulty-Advanced-red?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Recursive CTE](https://img.shields.io/badge/-Recursive%20CTE-C0392B?style=flat-square) ![Self-Referencing Hierarchy](https://img.shields.io/badge/-Self--Referencing%20Hierarchy-C0392B?style=flat-square) ![String Concatenation](https://img.shields.io/badge/-String%20Concatenation-F39C12?style=flat-square)
+
 ## Problem Statement
 
 Given an employee table with a self-referencing `reporting_to` manager column, find

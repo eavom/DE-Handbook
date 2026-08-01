@@ -1,5 +1,9 @@
 # Employee Referral — Running Total & Latest Referral
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Window Functions](https://img.shields.io/badge/-Window%20Functions-8E44AD?style=flat-square) ![Running Total](https://img.shields.io/badge/-Running%20Total-8E44AD?style=flat-square) ![Partitioning](https://img.shields.io/badge/-Partitioning-8E44AD?style=flat-square) ![ROW_NUMBER](https://img.shields.io/badge/-ROW__NUMBER-8E44AD?style=flat-square) ![COUNT OVER](https://img.shields.io/badge/-COUNT%20OVER-8E44AD?style=flat-square)
+
 ## Problem Statement
 
 Given a log of employee referral bonuses paid over time, compute:

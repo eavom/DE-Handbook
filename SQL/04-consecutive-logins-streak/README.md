@@ -1,5 +1,9 @@
 # Consecutive Logins With Dates
 
+[⬅ Back to Master Index](../MASTER.md)
+
+![Difficulty: Intermediate](https://img.shields.io/badge/Difficulty-Intermediate-yellow?style=flat-square) ![Query Type: DQL](https://img.shields.io/badge/Query%20Type-DQL-2980B9?style=flat-square) ![Gaps & Islands](https://img.shields.io/badge/-Gaps%20%26%20Islands-E67E22?style=flat-square) ![ROW_NUMBER](https://img.shields.io/badge/-ROW__NUMBER-8E44AD?style=flat-square) ![Date Functions](https://img.shields.io/badge/-Date%20Functions-E91E63?style=flat-square) ![JOIN](https://img.shields.io/badge/-JOIN-16A085?style=flat-square)
+
 ## Problem Statement
 
 Given per-user login history, find every streak of **3 or more consecutive calendar
