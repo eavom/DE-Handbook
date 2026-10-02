@@ -105,6 +105,7 @@ SELECT
       - SUM(amount) FILTER (WHERE transaction_type = 'withdrawal') AS net_balance
 FROM transactions
 GROUP BY customer_id;
+
 ```
 
 **Interview follow-up:** if thresholds needed to be data-driven (configurable per bank
